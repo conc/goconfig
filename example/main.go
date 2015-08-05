@@ -1,8 +1,8 @@
 package main
 
 import (
-	"../../goconfig"
 	"fmt"
+	"github.com/conc/goconfig"
 )
 
 func main() {
