@@ -13,5 +13,6 @@ func main() {
 	fmt.Println(testConfig.GetString("passwd"))
 	fmt.Println(testConfig.GetInt("id"))
 	fmt.Println(testConfig.GetBool("key5"))
-
+	fmt.Println(testConfig.GetStrArray("key6", ";"))
+	fmt.Println(testConfig.GetIntArray("key6", ";"))
 }
