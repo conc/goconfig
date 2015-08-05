@@ -41,4 +41,16 @@ func Test_Fortest(t *testing.T) {
 		t.Errorf("err GetBool: key5")
 	}
 
+	strArray := testConfig.GetStrArray("key6", ";")
+	if len(strArray) != 4 {
+		t.Errorf("err GetStrArray key6")
+	}
+	if strArray[0] != "10" ||
+		strArray[1] != "11" ||
+		strArray[2] != "12" ||
+		strArray[3] != "13" {
+		t.Errorf("err GetStrArray key6")
+
+	}
+
 }
