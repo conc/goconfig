@@ -66,6 +66,17 @@ func (c *Config) GetStrArray(key string, spitStr string) []string {
 	return strings.Split(valueStr, spitStr)
 }
 
+func (c *Config) GetIntArray(key string, spitStr string) []int {
+	var resultIntArray []int
+	valueStr := c.configList[key]
+	strArray := strings.Split(valueStr, spitStr)
+	for i := 0; i < len(strArray); i++ {
+		tmp := stringToInt(strArray[i])
+		resultIntArray = append(resultIntArray, tmp)
+	}
+	return resultIntArray
+}
+
 func stringToInt(str string) int {
 	if len(str) == 0 {
 		return 0

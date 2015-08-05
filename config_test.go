@@ -53,4 +53,15 @@ func Test_Fortest(t *testing.T) {
 
 	}
 
+	intArray := testConfig.GetIntArray("key6", ";")
+	if len(intArray) != 4 {
+		t.Errorf("err GetIntArray key6")
+	}
+	if intArray[0] != 10 ||
+		intArray[1] != 11 ||
+		intArray[2] != 12 ||
+		intArray[3] != 13 {
+		t.Errorf("err GetIntArray key6")
+	}
+
 }
