@@ -62,8 +62,16 @@ func (c *Config) GetBool(key string) bool {
 }
 
 func (c *Config) GetStrArray(key string, spitStr string) []string {
+	var result []string
 	valueStr := c.configList[key]
-	return strings.Split(valueStr, spitStr)
+	tmp := strings.Split(valueStr, spitStr)
+	for i := 0; i < len(tmp); i++ {
+		obj := strings.TrimSpace(tmp[i])
+		if len(obj) > 0 {
+			result = append(result, obj)
+		}
+	}
+	return result
 }
 
 func (c *Config) GetIntArray(key string, spitStr string) []int {
